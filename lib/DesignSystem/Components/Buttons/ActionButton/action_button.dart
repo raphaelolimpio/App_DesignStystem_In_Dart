@@ -18,7 +18,7 @@ class ActionButton extends StatelessWidget {
     double verticalPadding = 12;
     double iconSize = 24;
     TextStyle buttonTextStyle = button3Semibold;
-    Color buttonColor = lightPrimaryBrandColor;
+    Color buttonColor = darkPrimaryBrandColor;
 
     switch (viewModel.size) {
       case ActionButtonSize.large:

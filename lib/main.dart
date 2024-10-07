@@ -1,3 +1,4 @@
+import 'package:designsystemsampleapp/views/Menu/Profile/profile_view_model.dart';
 import 'package:designsystemsampleapp/views/Menu/menuBotton_view_model.dart';
 import 'package:designsystemsampleapp/views/SingUp/singUp_view_model.dart';
 import 'package:designsystemsampleapp/views/login/login_view_model.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ResetpasswordViewModel(),
+      home: const ProfileViewModel(),
     );
   }
 }

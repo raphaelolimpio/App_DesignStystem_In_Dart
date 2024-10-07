@@ -26,6 +26,10 @@ class BottomBarItem {
   BottomBarItem({
     required this.icon,
     required this.label,
+    required leadingIcon,
+    required String title,
+    required IconData trailingIcon,
+    VoidCallback? onTap,
   });
 }
 

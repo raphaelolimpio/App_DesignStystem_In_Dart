@@ -5,6 +5,7 @@ import 'package:designsystemsampleapp/DesignSystem/Components/LinkedLabel/linked
 import 'package:designsystemsampleapp/views/Menu/menuBotton_view_model.dart';
 import 'package:designsystemsampleapp/views/SingUp/singUp_view_model.dart';
 import 'package:designsystemsampleapp/views/login/login.dart';
+import 'package:designsystemsampleapp/views/login/resetPassWord/resetPassWord_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:designsystemsampleapp/DesignSystem/Components/InputField/input_text.dart';
 
@@ -53,7 +54,7 @@ class _LoginViewModelState extends State<LoginViewModel> {
     _linkedLabelViewModel = LinkedLabelViewModel(
         fullText: "Forgot Password",
         linkedText: "Forgot Password",
-        onLinkTap: () => _viewModel.OnLinktTap(context));
+        onLinkTap: () => ResetpasswordViewModel());
   }
 
   @override

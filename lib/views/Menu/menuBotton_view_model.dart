@@ -32,11 +32,11 @@ class _MenubottonViewModelState extends State<MenubottonViewModel> {
               label: "Spendings",
             ),
             const BottomNavigationBarItem(
-              icon: Icon(Icons.message),
+              icon: Icon(Icons.settings),
               label: "Settings",
             ),
             const BottomNavigationBarItem(
-              icon: Icon(Icons.label),
+              icon: Icon(Icons.message),
               label: "Messages",
             ),
             const BottomNavigationBarItem(
