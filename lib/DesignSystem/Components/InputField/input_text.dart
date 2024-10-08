@@ -4,7 +4,8 @@ import 'input_text_view_model.dart';
 class StyledInputField extends StatefulWidget {
   final InputTextViewModel viewModel;
 
-  const StyledInputField._({Key? key, required this.viewModel}) : super(key: key);
+  const StyledInputField._({Key? key, required this.viewModel})
+      : super(key: key);
 
   @override
   StyledInputFieldState createState() => StyledInputFieldState();
@@ -26,7 +27,8 @@ class StyledInputFieldState extends State<StyledInputField> {
   }
 
   void validateInput() {
-    final errorText = widget.viewModel.validator?.call(widget.viewModel.controller.text);
+    final errorText =
+        widget.viewModel.validator?.call(widget.viewModel.controller.text);
     setState(() {
       errorMsg = errorText;
     });
@@ -55,8 +57,11 @@ class StyledInputFieldState extends State<StyledInputField> {
               onPressed: togglePasswordVisibility,
             )
           : widget.viewModel.suffixIcon,
-      fillColor: widget.viewModel.isEnabled ? Colors.white : Colors.grey.shade400,
-      labelText: widget.viewModel.placeholder.isNotEmpty ? widget.viewModel.placeholder : null,
+      fillColor:
+          widget.viewModel.isEnabled ? Colors.white : Colors.grey.shade400,
+      labelText: widget.viewModel.placeholder.isNotEmpty
+          ? widget.viewModel.placeholder
+          : null,
       labelStyle: const TextStyle(color: Colors.black),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),

@@ -1,16 +1,17 @@
+import 'package:designsystemsampleapp/DesignSystem/Components/MenuComponents/LinkedLabelMenuLgout/LinkedLabel_View_Model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'linked_label_view_model.dart';
-import '../../shared/colors.dart';
-import '../../shared/styles.dart';
 
-class LinkedLabel extends StatelessWidget {
-  final LinkedLabelViewModel viewModel;
+import '../../../shared/colors.dart';
+import '../../../shared/styles.dart';
 
-  const LinkedLabel._({super.key, required this.viewModel});
+class LinkedLabelMenu extends StatelessWidget {
+  final LinkedLabelMenuViewModel viewModel;
 
-  static Widget instantiate({required LinkedLabelViewModel viewModel}) {
-    return LinkedLabel._(viewModel: viewModel);
+  const LinkedLabelMenu._({super.key, required this.viewModel});
+
+  static Widget instantiate({required LinkedLabelMenuViewModel viewModel}) {
+    return LinkedLabelMenu._(viewModel: viewModel);
   }
 
   @override
@@ -25,11 +26,11 @@ class LinkedLabel extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: viewModel.fullText.substring(0, startIndex),
-        style: label2Semibold,
+        style: label3Semibold,
         children: [
           TextSpan(
             text: viewModel.linkedText,
-            style: const TextStyle(color: normalSecondaryBrandColor),
+            style: const TextStyle(color: darkTertiaryBrandColor),
             recognizer: TapGestureRecognizer()..onTap = viewModel.onLinkTap,
           ),
           TextSpan(

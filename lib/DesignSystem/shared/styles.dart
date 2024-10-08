@@ -87,6 +87,13 @@ const TextStyle label2Semibold = TextStyle(
   fontWeight: FontWeight.w600,
   color: normalPrimaryBaseColorLight,
 );
+//novo TextStyle
+const TextStyle label3Semibold = TextStyle(
+  fontFamily: 'Inter',
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  color: normalPrimaryBaseColorLight,
+);
 
 const TextStyle button1Bold = TextStyle(
   fontFamily: 'Inter',

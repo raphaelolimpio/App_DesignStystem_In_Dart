@@ -6,7 +6,7 @@ enum ActionBottomMenuNavigatorOptionSize {
   small,
 }
 
-enum ActionIconStyle {
+enum ActionIconSize {
   large,
   medium,
   small,
@@ -30,12 +30,16 @@ class BottomBarItem {
   final String text; // Texto no meio
   final IconData? trailingIcon; // Ícone opcional no final
   final VoidCallback? onTap; // Ação ao clicar no item
+  final ActionIconSize iconSize; // Tamanho do ícone
+  final ActionIconColors iconColor; // Cor do ícone
 
   BottomBarItem({
     this.leadingIcon,
     required this.text,
     this.trailingIcon,
     this.onTap,
+    required this.iconSize,
+    required this.iconColor,
   });
 }
 
