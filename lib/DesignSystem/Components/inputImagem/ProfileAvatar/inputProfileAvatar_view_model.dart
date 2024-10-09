@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart'; // Para selecionar imagens
+import 'package:image_picker/image_picker.dart';
 
-enum CameraDevice {
+// Para selecionar imagens
+
+enum CameraDevices {
   front,
   rear,
 }
@@ -32,15 +34,15 @@ class ProfileAvatarViewModel {
       radius; // O raio do círculo do avatar, determinado pelo tamanho do avatar.
   final bool
       allowEdit; // Um booleano que indica se a edição da imagem é permitida.
-  final Widget addImageIcon; // O ícone que permite adicionar uma nova imagem.
-  final Widget removeImageIcon; // O ícone que permite remover a imagem atual.
+  final Widget? addImageIcon; // O ícone que permite adicionar uma nova imagem.
+  final Widget? removeImageIcon; // O ícone que permite remover a imagem atual.
   final Function(XFile?)
       onImageChanged; // Função callback chamada quando a imagem é alterada.
   final Function
       onImageRemoved; // Função callback chamada quando a imagem é removida.
   final Future<ImageSource> Function()
       getImageSource; // Função que retorna a fonte da imagem (câmera ou galeria).
-  final Future<CameraDevice> Function()
+  final Future<CameraDevices> Function()
       getPreferredCameraDevice; // Função que retorna o dispositivo da câmera preferido.
 
   ProfileAvatarViewModel({

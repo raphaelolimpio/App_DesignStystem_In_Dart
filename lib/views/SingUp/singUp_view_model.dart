@@ -1,11 +1,14 @@
 import 'package:designsystemsampleapp/DesignSystem/Components/Buttons/ActionButton/action_button.dart';
 import 'package:designsystemsampleapp/DesignSystem/Components/Buttons/ActionButton/action_button_view_model.dart';
 import 'package:designsystemsampleapp/DesignSystem/Components/LinkedLabel/linked_label_view_model.dart';
+import 'package:designsystemsampleapp/DesignSystem/Components/inputImagem/InputImagem.dart';
+import 'package:designsystemsampleapp/DesignSystem/Components/inputImagem/ProfileAvatar/inputProfileAvatar_view_model.dart';
 import 'package:designsystemsampleapp/views/Menu/menuBotton_view_model.dart';
 import 'package:designsystemsampleapp/views/SingUp/singUp.dart';
 import 'package:designsystemsampleapp/views/login/login_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:designsystemsampleapp/DesignSystem/Components/InputField/input_text.dart';
+import 'package:image_picker/image_picker.dart';
 
 class SingUpViewModel extends StatefulWidget {
   const SingUpViewModel({super.key});
@@ -20,6 +23,7 @@ class _SingUpViewModelState extends State<SingUpViewModel> {
       _singUpButtonViewModel; // Instância do ActionButton
   late LinkedLabelViewModel _linkedLabelViewModel; // Instância do LinkedLabel
   late ActionButtonViewModel _creatAccountButtonViewModel; // Instância do
+  late final ProfileAvatarViewModel _profileAvatarViewModel;
 
   bool _isChecked = false;
 
@@ -27,6 +31,23 @@ class _SingUpViewModelState extends State<SingUpViewModel> {
   void initState() {
     super.initState();
     _viewModel = SingUp(); // Inicializa o ViewModel
+
+    //imagem do perfil
+    _profileAvatarViewModel = ProfileAvatarViewModel(
+      model: ProfileAvatarModel.large,
+      addImageIcon: Icon(Icons.add_a_photo),
+      allowEdit: true,
+      removeImageIcon: Icon(Icons.remove_circle),
+      onImageChanged: (image) {},
+      getImageSource: () async {
+        return ImageSource.gallery;
+      },
+      getPreferredCameraDevice: () async {
+        return CameraDevices.rear;
+      },
+      onImageRemoved: () {},
+    );
+
     //botão
     _singUpButtonViewModel = ActionButtonViewModel(
       size: ActionButtonSize.large,
@@ -76,19 +97,8 @@ class _SingUpViewModelState extends State<SingUpViewModel> {
             children: [
               //imagem
               Padding(
-                padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Image.network(
-                      "https://th.bing.com/th/id/OIP.L5IWtVZ4PY3xJ8Sr7EUmywHaHa?rs=1&pid=ImgDetMain",
-                      width: 150,
-                      height: 150,
-                      fit: BoxFit.cover,
-                    ),
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.only(top: 50.0, bottom: 50.0),
+                  child: ProfileAvatar(viewModel: _profileAvatarViewModel)),
 
               //inputTExt
               Padding(
@@ -136,7 +146,7 @@ class _SingUpViewModelState extends State<SingUpViewModel> {
               ),
               //buton criar conta
               Padding(
-                padding: EdgeInsets.only(top: 90.0, bottom: 10.0),
+                padding: EdgeInsets.only(top: 100.0, bottom: 10.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
